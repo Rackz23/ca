@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>California System Compliance Portal</title>
+  <style>
+    body {
+      background-color: #e8edf3;
+      font-family: 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border-left: 8px solid #0057a0;
+    }
+    .header {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #0057a0;
+    }
+    .subheader {
+      font-size: 14px;
+      color: #6b6b6b;
+      margin-bottom: 20px;
+    }
+    .alert {
+      background: #fff6d9;
+      border-left: 5px solid #f2c037;
+      padding: 12px 15px;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+    .stamp {
+      background: #e6f0fb;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-left: 4px solid #0057a0;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .table {
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+    .table div {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+    }
+    .button {
+      display: block;
+      background: #0057a0;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #003e7d;
+    }
+    .disclaimer {
+      font-size: 11px;
+      color: #8a8a8a;
+      line-height: 1.6;
+      margin-top: 25px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 11px;
+      color: #7b7b7b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">🔐 CDSD | California Digital Sync Division</div>
+    <div class="subheader">Digital Access Packet Processing Required</div>
+
+    <div class="alert">⚠️ Your digital ID was flagged during the State Transition Sweep.</div>
+
+    <div class="stamp">System ID: <strong>CA-R09-8261</strong></div>
+
+    <div class="table">
+      <div><span>Packet Type:</span><span>Digital Access Resolution</span></div>
+      <div><span>Amount Due:</span><span><strong>$8.25</strong></span></div>
+      <div><span>Compliance Status:</span><span style="color:red"><strong>INTERRUPTED</strong></span></div>
+      <div><span>Deadline:</span><span>6:00PM PST Today</span></div>
+    </div>
+
+    <a href="#" class="button">🔘 PROCESS PACKET & DOWNLOAD CONFIRMATION</a>
+
+    <div class="disclaimer">
+      Auto-generated: 2025-10-29T13:41 PST<br>
+      Region Code: CA-R09 • CDSD-ID#4082 • ENF-ZONE-92<br>
+      Your IP and device are logged.<br>
+      You are not authorized to dispute this via SMS.<br>
+      Failure to comply may result in access lag or disconnect.
+    </div>
+
+    <div class="footer">
+      🧠 System Compliance Sync — Trusted Portals:<br>
+      MyTurn, EBT Reverification, CoveredCA, CA DMV, Unemployment, Solar Programs
+    </div>
+  </div>
+</body>
+</html>
