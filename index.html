@@ -1,125 +1,106 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>California System Compliance Portal</title>
+  <title>Help Feed Florida's Rescue Animals Tonight</title>
   <style>
     body {
-      background-color: #e8edf3;
-      font-family: 'Segoe UI', sans-serif;
-      color: #1a1a1a;
-      padding: 0;
+      font-family: system-ui, Arial, sans-serif;
       margin: 0;
+      background: #fafafa;
+      color: #222;
+      text-align: center;
     }
-    .container {
+    header {
+      background: #fffbf2;
+      padding: 24px 16px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #2b2b2b;
+    }
+    p.sub {
+      margin: 0 auto 18px;
       max-width: 500px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      border-left: 8px solid #0057a0;
+      font-size: 1.05rem;
     }
-    .header {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #0057a0;
+    img.hero {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
     }
-    .subheader {
-      font-size: 14px;
-      color: #6b6b6b;
-      margin-bottom: 20px;
+    .donate-section {
+      padding: 24px 16px;
     }
-    .alert {
-      background: #fff6d9;
-      border-left: 5px solid #f2c037;
-      padding: 12px 15px;
-      font-size: 14px;
-      margin-bottom: 25px;
+    .impact {
+      background: #fff;
+      border-radius: 8px;
+      margin: 16px auto;
+      padding: 16px;
+      max-width: 500px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-size: 0.95rem;
     }
-    .stamp {
-      background: #e6f0fb;
-      padding: 8px 12px;
-      font-size: 14px;
-      border-left: 4px solid #0057a0;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    .table {
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
-    .table div {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-    }
-    .button {
-      display: block;
-      background: #0057a0;
-      color: white;
-      text-align: center;
-      padding: 14px;
+    .progress {
+      width: 80%;
+      height: 12px;
+      background: #e5e5e5;
       border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 15px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s;
+      margin: 10px auto;
+      overflow: hidden;
     }
-    .button:hover {
-      background: #003e7d;
+    .bar {
+      width: 83%;
+      height: 100%;
+      background: #5cb85c;
     }
-    .disclaimer {
-      font-size: 11px;
-      color: #8a8a8a;
-      line-height: 1.6;
-      margin-top: 25px;
+    .buttons button {
+      background: #ff6b35;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      margin: 8px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
     }
-    .footer {
-      margin-top: 40px;
-      font-size: 11px;
-      color: #7b7b7b;
-      text-align: center;
+    footer {
+      font-size: 0.8rem;
+      color: #666;
+      padding: 20px;
     }
   </style>
-  <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=b12a4080"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="header">🔐 CDSD | California Digital Sync Division</div>
-    <div class="subheader">Digital Access Packet Processing Required</div>
+  <header>
+    <h1>Help Feed Florida's Rescue Animals Tonight</h1>
+    <p class="sub">Every $5 fills one bowl of food for a homeless dog or cat in a Florida shelter.</p>
+  </header>
 
-    <div class="alert">⚠️ Your digital ID was flagged during the State Transition Sweep.</div>
+  <img class="hero" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1500&q=80" alt="Rescued dog looking into camera">
 
-    <div class="stamp">System ID: <strong>CA-R09-8261</strong></div>
-
-    <div class="table">
-      <div><span>Packet Type:</span><span>Digital Access Resolution</span></div>
-      <div><span>Amount Due:</span><span><strong>$8.25</strong></span></div>
-      <div><span>Compliance Status:</span><span style="color:red"><strong>INTERRUPTED</strong></span></div>
-      <div><span>Deadline:</span><span>6:00PM PST Today</span></div>
+  <section class="donate-section">
+    <div class="impact">
+      ✅ 83 animals fed this week · Goal: 100
+      <div class="progress"><div class="bar"></div></div>
     </div>
 
-   <a href="https://buy.stripe.com/dRmeV63nF1gp9TvbgEgrS00" class="button" target="_blank" rel="noopener noreferrer">
-  🔘 PROCESS PACKET & DOWNLOAD CONFIRMATION
-</a>
-
-
-    <div class="disclaimer">
-      Auto-generated: 2025-10-29T13:41 PST<br>
-      Region Code: CA-R09 • CDSD-ID#4082 • ENF-ZONE-92<br>
-      Your IP and device are logged.<br>
-      You are not authorized to dispute this via SMS.<br>
-      Failure to comply may result in access lag or disconnect.
+    <div class="buttons">
+      <!-- Replace the # with your payment links -->
+      <a href="#"><button>$5</button></a>
+      <a href="#"><button>$15</button></a>
+      <a href="#"><button>$25</button></a>
+      <a href="#"><button>Other</button></a>
     </div>
+  </section>
 
-    <div class="footer">
-      🧠 System Compliance Sync — Trusted Portals:<br>
-      MyTurn, EBT Reverification, CoveredCA, CA DMV, Unemployment, Solar Programs
-    </div>
-  </div>
+  <footer>
+    Grassroots volunteer campaign supporting Florida shelters. Donations are not tax-deductible.<br>
+    © 2025 Florida Animal Relief Fund
+  </footer>
 </body>
 </html>
+
