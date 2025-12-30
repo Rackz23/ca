@@ -1,107 +1,627 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=112da6f5"></script>
   <meta charset="UTF-8" />
+  <title>CDHA | Privacy &amp; Security Tune-Up – System Health Review</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Help Feed Florida's Rescue Animals Tonight</title>
   <style>
+    :root {
+      --bg: #f3f4f6;
+      --bg-alt: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border: #d1d5db;
+      --accent: #1f2937;
+      --primary: #2563eb;
+      --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, Arial, sans-serif;
       margin: 0;
-      background: #fafafa;
-      color: #222;
-      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
     }
-    header {
-      background: #fffbf2;
-      padding: 24px 16px;
+
+    .top-bar {
+      background: #020617;
+      color: #e5e7eb;
+      padding: 10px 16px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #111827;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      color: #2b2b2b;
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    p.sub {
-      margin: 0 auto 18px;
-      max-width: 500px;
-      font-size: 1.05rem;
+
+    .top-bar-tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      font-size: 10px;
     }
-    img.hero {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
+
+    .top-bar-right {
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: right;
     }
-    .donate-section {
-      padding: 24px 16px;
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
     }
-    .impact {
-      background: #fff;
-      border-radius: 8px;
-      margin: 16px auto;
-      padding: 16px;
-      max-width: 500px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      font-size: 0.95rem;
+
+    .page-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
     }
-    .progress {
-      width: 80%;
-      height: 12px;
-      background: #e5e5e5;
+
+    .page-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 6px;
+    }
+
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .meta-row {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .meta-item {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 10px;
+      color: #4b5563;
+    }
+
+    .meta-value {
+      font-weight: 500;
+      color: #111827;
+      font-size: 11px;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.7fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .panel-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .top-bar-right {
+        text-align: left;
+      }
+    }
+
+    .panel {
+      background: var(--bg-alt);
       border-radius: 6px;
-      margin: 10px auto;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 20px;
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      color: var(--accent);
+    }
+
+    .panel-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #f97316;
+      background: #fffbeb;
+      color: #92400e;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .finding-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .finding-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .finding-label {
+      font-weight: 500;
+    }
+
+    .finding-meta {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .meter-block {
+      margin-top: 14px;
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .meter-label-strong {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .meter {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #e5e7eb;
       overflow: hidden;
     }
-    .bar {
-      width: 83%;
+
+    .meter-fill {
+      width: 68%;
       height: 100%;
-      background: #5cb85c;
+      background: #f97316;
+      transition: width 1.2s ease-out;
     }
-    .buttons button {
-      background: #ff6b35;
-      color: #fff;
+
+    .legal-note {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .action-summary {
+      font-size: 13px;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 10px 0 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .price-main {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .price-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 4px;
       border: none;
-      padding: 12px 24px;
-      margin: 8px;
-      border-radius: 6px;
-      font-size: 1rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
       cursor: pointer;
     }
-    footer {
-      font-size: 0.8rem;
-      color: #666;
-      padding: 20px;
+
+    .cta-button:hover {
+      background: #1d4ed8;
+    }
+
+    .inline-meta {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .badges-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 10px;
+      color: #4b5563;
+    }
+
+    .badge {
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+    }
+
+    .section-block {
+      margin-top: 24px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--accent);
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .feature-card {
+      background: var(--bg-alt);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      padding: 12px 12px 14px;
+      font-size: 12px;
+    }
+
+    .feature-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .feature-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .testimony {
+      margin-top: 22px;
+      background: var(--bg-alt);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      padding: 12px 12px 14px;
+      font-size: 12px;
+    }
+
+    .testimony-quote {
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .testimony-meta {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .second-cta-block {
+      margin-top: 22px;
+      padding: 16px 14px;
+      border-radius: 6px;
+      border: 1px solid #c7d2fe;
+      background: #eff6ff;
+      font-size: 13px;
+    }
+
+    .second-cta-text {
+      margin: 0 0 10px;
+      color: #1f2937;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .footer-legal {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #2563eb;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Help Feed Florida's Rescue Animals Tonight</h1>
-    <p class="sub">Every $5 fills one bowl of food for a homeless dog or cat in a Florida shelter.</p>
-  </header>
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div>Consumer Device Health Administration</div>
+      <div class="top-bar-tag">CDHA / Device Health Program</div>
+    </div>
+    <div class="top-bar-right">
+      System Health &amp; Privacy Review Portal<br />
+      Independent Digital Device Safety Service
+    </div>
+  </div>
 
-  <img class="hero" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1500&q=80" alt="Rescued dog looking into camera">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">System Health &amp; Privacy Review</h1>
+      <p class="page-subtitle">
+        This portal provides an independent device optimization and privacy tune-up service.
+        A brief review is recommended to confirm that your settings and background activity
+        align with current safety guidance.
+      </p>
 
-  <section class="donate-section">
-    <div class="impact">
-      ✅ 83 animals fed this week · Goal: 100
-      <div class="progress"><div class="bar"></div></div>
+      <div class="meta-row">
+        <div class="meta-item">
+          <span class="meta-label">Record ID</span>
+          <span class="meta-value">CDHA-MH-2026-0829</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Device</span>
+          <span class="meta-value">Mobile / Unspecified OS</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Review Status</span>
+          <span class="meta-value">Action Recommended</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="panel-grid">
+      <!-- Left panel: findings -->
+      <section class="panel">
+        <div class="panel-title">Preliminary Observations</div>
+        <p class="panel-subtitle">
+          Based on typical usage patterns, many devices present configuration risks that can impact privacy,
+          background activity, and overall responsiveness. Your device may fall into this category and may
+          benefit from a structured tune-up.
+        </p>
+
+        <div class="flag">
+          Notice: Optimization and privacy review is recommended for this device profile.
+        </div>
+
+        <ul class="finding-list">
+          <li>
+            <span class="finding-label">Unreviewed privacy settings</span>
+            <span class="finding-meta">
+              Several common app and browser permissions are often left at default, which can allow broader
+              data access than intended.
+            </span>
+          </li>
+          <li>
+            <span class="finding-label">Elevated background activity</span>
+            <span class="finding-meta">
+              Many devices run multiple background services that can increase data usage, battery drain,
+              and potential exposure.
+            </span>
+          </li>
+          <li>
+            <span class="finding-label">Outdated configuration defaults</span>
+            <span class="finding-meta">
+              Older configurations may not reflect current recommendations for privacy, security,
+              and performance.
+            </span>
+          </li>
+        </ul>
+
+        <div class="meter-block">
+          <div class="meter-label-row">
+            <span class="meter-label-strong">Overall optimization opportunity</span>
+            <span>Estimated impact if tune-up is applied</span>
+          </div>
+          <div class="meter">
+            <div class="meter-fill"></div>
+          </div>
+        </div>
+
+        <p class="legal-note">
+          This section reflects generalized device-health patterns and does not declare the presence of
+          malware or any specific threat. No system changes are made without your explicit action.
+        </p>
+      </section>
+
+      <!-- Right panel: action -->
+      <section class="panel">
+        <div class="panel-title">Recommended User Action</div>
+        <p class="panel-subtitle">
+          CDHA offers a structured Privacy &amp; Security Tune-Up designed to review key settings,
+          background processes, and practical steps you can apply to improve device health.
+        </p>
+
+        <p class="action-summary">
+          The review summarizes optimization opportunities and provides a step-by-step checklist you can follow.
+          Many users complete their tune-up in under 15 minutes.
+        </p>
+
+        <div class="price-row">
+          <div>
+            <div class="price-label">Service</div>
+            <div>Privacy &amp; Security Tune-Up and System Health Checklist</div>
+          </div>
+          <div>
+            <div class="price-label">One-time review fee</div>
+            <div class="price-main">$8.97</div>
+          </div>
+        </div>
+
+        <a class="cta-button" href="https://buy.stripe.com/placeholder">
+          Run Immediate Tune-Up – $8.97
+        </a>
+
+        <div class="inline-meta">
+          No subscription. One-time charge for access to this device health and privacy optimization review.
+        </div>
+
+        <div class="badges-row">
+          <div class="badge">No remote access required</div>
+          <div class="badge">User-applied recommendations</div>
+          <div class="badge">Payment processed via Stripe</div>
+        </div>
+      </section>
     </div>
 
-    <div class="buttons">
-      <!-- Replace the # with your payment links -->
-      <a href="https://buy.stripe.com/aFa8wIgar4sB3v7gAYgrS01"><button>$5</button></a>
-      <a href="https://buy.stripe.com/00weV6f6n0clghT5WkgrS02"><button>$15</button></a>
-      <a href="https://buy.stripe.com/dRm9AM3nF0clfdPbgEgrS03"><button>$25</button></a>
-      <a href="#"><button>$50</button></a>
-    </div>
-  </section>
+    <section class="section-block">
+      <h2 class="section-title">What the Tune-Up Covers</h2>
+      <p class="section-subtitle">
+        The Privacy &amp; Security Tune-Up focuses on practical, user-visible improvements. No diagnostic claims
+        or threat detections are made; instead, you receive structured guidance to bring your device in line
+        with current best-practice recommendations.
+      </p>
 
-  <footer>
-    Grassroots volunteer campaign supporting Florida shelters. Donations are not tax-deductible.<br>
-    © 2025 Florida Animal Relief Fund
-  </footer>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-title">Privacy configuration review</div>
+          <div class="feature-text">
+            Identify common app and browser permissions that may share more data than necessary and receive guidance
+            on adjusting them.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Background activity optimization</div>
+          <div class="feature-text">
+            Learn which types of background processes are typically safe to limit to improve responsiveness,
+            battery life, and data use.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">System health checklist</div>
+          <div class="feature-text">
+            A concise checklist covering storage hygiene, update posture, and basic device-care routines suitable
+            for non-technical users.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Practical security posture tips</div>
+          <div class="feature-text">
+            Recommendations for safer everyday use, including lock-screen, network, and sign-in habits that reduce
+            avoidable risk.
+          </div>
+        </div>
+      </div>
+
+      <div class="testimony">
+        <div class="testimony-quote">
+          “The tune-up gave me a clear, structured list of things to adjust. I was able to tighten my privacy settings
+          and reduce background drain without installing extra software.”
+        </div>
+        <div class="testimony-meta">
+          Example user feedback · Provided for illustration only
+        </div>
+      </div>
+
+      <div class="second-cta-block">
+        <p class="second-cta-text">
+          If you would like to receive a structured Privacy &amp; Security Tune-Up for this device profile,
+          you may proceed below. The review does not access your files or install any software; it simply
+          provides guidance you can apply at your discretion.
+        </p>
+        <a class="cta-button" href="https://buy.stripe.com/placeholder">
+          Proceed to Device Health Review – $8.97
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-legal">
+        The Consumer Device Health Administration (CDHA) is presented here as an independent device-health
+        service concept and is not a government agency. This page does not perform threat detection and does
+        not state that your device is infected, unsafe, or non-compliant. It offers a generalized optimization
+        and privacy review only.
+      </div>
+      <div class="footer-legal">
+        All suggestions are informational and should be applied at your own discretion. For confirmed security
+        incidents, consult your device manufacturer, a licensed professional, or your official software vendor.
+      </div>
+      <div class="footer-links">
+        <a href="#">Service Terms</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Data Handling Summary</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
-
